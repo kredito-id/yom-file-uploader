@@ -307,8 +307,11 @@ $.extend(YomFileUploader.prototype, {
 			var file = files[i];
 			if(!(/^image\//i).test(file.type)) {
 				fixedFiles.push(file);
-				readFile(++i);
-				return;
+				if(i == files.length - 1) {
+					callback(fixedFiles);
+				  } else {
+					readFile(++i);
+				  }
 			}
 			self._fixImageFile(file, function(file) {
 				fixedFiles.push(file);
