@@ -315,6 +315,7 @@ $.extend(YomFileUploader.prototype, {
 				fixedFiles.push(file);
 				if(i == files.length - 1) {
 					callback(fixedFiles);
+					return;
 				  } else {
 					readFile(++i);
 				  }
