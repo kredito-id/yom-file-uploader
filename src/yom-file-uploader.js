@@ -312,6 +312,7 @@ $.extend(YomFileUploader.prototype, {
 					return;
 				  } else {
 					readFile(++i);
+					return;
 				  }
 			}
 			self._fixImageFile(file, function(file) {
